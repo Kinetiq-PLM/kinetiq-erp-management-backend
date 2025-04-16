@@ -21,6 +21,10 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/api/management/', permanent=False)),  # Redirect root to api/management/
-    path('api/management/', include('management_approvals.urls')),
+    # Add redirect to external API Gateway
+    path('admin/', 
+         RedirectView.as_view(url='https://r7d8au0l77.execute-api.ap-southeast-1.amazonaws.com/dev/'),
+         name='admin'),
+    # Include the delivery app URLs under the /api/ path
+    path('api/', include('management_approvals.urls')),
 ]

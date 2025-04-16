@@ -3,7 +3,7 @@ from .models import ManagementApproval
 
 @admin.register(ManagementApproval)
 class ManagementApprovalAdmin(admin.ModelAdmin):
-    list_display = ('approval_id', 'request_id_all', 'external_id', 'status')
+    list_display = ('approval_id', 'request_id_all', 'external_id','issue_date', 'decision_date', 'checked_date', 'due_date', 'status', 'checked_by', 'remarks')
     list_filter = ('status', 'decision_date', 'issue_date')
     search_fields = ('approval_id', 'request_id_all', 'remarks')
     readonly_fields = ('approval_id',)
