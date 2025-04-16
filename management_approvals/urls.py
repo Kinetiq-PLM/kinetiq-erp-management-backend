@@ -7,6 +7,6 @@ from .views import (
 app_name = 'management_approvals'
 
 urlpatterns = [
-    path('approvals/', ManagementApprovalListCreateView.as_view(), name='approval-list-create'),
-    path('approvals/<str:pk>/', ManagementApprovalDetailView.as_view(), name='approval-detail'),
+    path('', ManagementApprovalListCreateView.as_view(), name='approval-list-create'),
+    path('<str:pk>/', ManagementApprovalDetailView.as_view(), name='approval-detail'),
 ]

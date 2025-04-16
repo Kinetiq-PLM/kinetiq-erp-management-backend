@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-aq8b!+(p=3g8@1#c^(9tzzauyb-avozj5=sih(_0en1+e6i)l^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["k6e453u5ij.execute-api.ap-southeast-1.amazonaws.com",
-                 "127.0.0.1",]
+ALLOWED_HOSTS = [
+    "k6e453u5ij.execute-api.ap-southeast-1.amazonaws.com",
+    "127.0.0.1",
+    "localhost",
+    ".execute-api.ap-southeast-1.amazonaws.com",  # Add wildcard subdomain
+]
 
 
 # Application definition

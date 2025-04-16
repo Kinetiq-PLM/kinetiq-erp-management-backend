@@ -17,12 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
-
-def health_check(request):
-    return HttpResponse("OK")
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='/api/management/', permanent=False)),  # Redirect root to api/management/
     path('api/management/', include('management_approvals.urls')),
-    path('health/', health_check, name='health_check'),
 ]
