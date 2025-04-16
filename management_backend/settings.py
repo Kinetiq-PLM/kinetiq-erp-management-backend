@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-aq8b!+(p=3g8@1#c^(9tzzauyb-avozj5=sih(_0en1+e6i)l^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://k6e453u5ij.execute-api.ap-southeast-1.amazonaws.com",
+                 "127.0.0.1",]
 
 
 # Application definition
@@ -101,7 +102,7 @@ DATABASES = {
         'PASSWORD': 'Psychers09123',
         'PORT': '5432',
         'OPTIONS': {
-            'options': '-c search_path=management,admin,services,operations,public'
+            'options': '-c search_path=management,admin,services,operations,finance,project_management,human_resources,public'
         }
     }
 }
